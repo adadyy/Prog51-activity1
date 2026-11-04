@@ -1,0 +1,143 @@
+ano daw ang ilalagy dito????? kahit ano daw
+1 wo wo wo wo
+wowwww
+‎
+‎#include <iostream>
+‎using namespace std;
+‎
+‎int main() {
+‎    // Product names
+‎    string product1 = "Rice";
+‎    string product2 = "Bread";
+‎    string product3 = "Milk";
+‎
+‎    // Product prices
+‎    double price1 = 50.00;
+‎    double price2 = 15.00;
+‎    double price3 = 30.00;
+‎
+‎    // Product stocks
+‎    int stock1 = 20;
+‎    int stock2 = 30;
+‎    int stock3 = 15;
+‎
+‎    int choice, quantity;
+‎    double total = 0, payment, change;
+‎    char again;
+‎
+‎    do {
+‎        cout << "\n===== INVENTORY SYSTEM / POS =====\n";
+‎        cout << "1. View Products\n";
+‎        cout << "2. Buy Products\n";
+‎        cout << "3. View Inventory\n";
+‎        cout << "4. Exit\n";
+‎        cout << "Enter choice: ";
+‎        cin >> choice;
+‎
+‎        switch (choice) {
+‎            case 1:
+‎                cout << "\n--- PRODUCT LIST ---\n";
+‎                cout << "1. " << product1 << " - PHP " << price1 << endl;
+‎                cout << "2. " << product2 << " - PHP " << price2 << endl;
+‎                cout << "3. " << product3 << " - PHP " << price3 << endl;
+‎                break;
+‎
+‎            case 2:
+‎                total = 0;
+‎
+‎                do {
+‎                    cout << "\n--- BUY PRODUCTS ---\n";
+‎                    cout << "1. " << product1 << " - PHP " << price1
+‎                         << " (Stock: " << stock1 << ")\n";
+‎                    cout << "2. " << product2 << " - PHP " << price2
+‎                         << " (Stock: " << stock2 << ")\n";
+‎                    cout << "3. " << product3 << " - PHP " << price3
+‎                         << " (Stock: " << stock3 << ")\n";
+‎                    cout << "0. Checkout\n";
+‎
+‎                    cout << "Choose product: ";
+‎                    cin >> choice;
+‎
+‎                    if (choice == 0) {
+‎                        break;
+‎                    }
+‎                    else if (choice < 1 || choice > 3) {
+‎                        cout << "Invalid product choice!\n";
+‎                    }
+‎                    else {
+‎                        cout << "Enter quantity: ";
+‎                        cin >> quantity;
+‎
+‎                        if (quantity <= 0) {
+‎                            cout << "Invalid quantity!\n";
+‎                        }
+‎                        else if (choice == 1) {
+‎                            if (quantity <= stock1) {
+‎                                total += price1 * quantity;
+‎                                stock1 -= quantity;
+‎                                cout << product1 << " added to cart.\n";
+‎                            }
+‎                            else {
+‎                                cout << "Not enough Rice in stock!\n";
+‎                            }
+‎                        }
+‎                        else if (choice == 2) {
+‎                            if (quantity <= stock2) {
+‎                                total += price2 * quantity;
+‎                                stock2 -= quantity;
+‎                                cout << product2 << " added to cart.\n";
+‎                            }
+‎                            else {
+‎                                cout << "Not enough Bread in stock!\n";
+‎                            }
+‎                        }
+‎                        else if (choice == 3) {
+‎                            if (quantity <= stock3) {
+‎                                total += price3 * quantity;
+‎                                stock3 -= quantity;
+‎                                cout << product3 << " added to cart.\n";
+‎                            }
+‎                            else {
+‎                                cout << "Not enough Milk in stock!\n";
+‎                            }
+‎                        }
+‎                    }
+‎
+‎                } while (true);
+‎
+‎                if (total > 0) {
+‎                    cout << "\n===== RECEIPT =====\n";
+‎                    cout << "Total: PHP " << total << endl;
+‎
+‎                    do {
+‎                        cout << "Enter payment: PHP ";
+‎                        cin >> payment;
+‎
+‎                        if (payment < total) {
+‎                            cout << "Insufficient payment!\n";
+‎                        }
+‎
+‎                    } while (payment < total);
+‎
+‎                    change = payment - total;
+‎
+‎                    cout << "Payment: PHP " << payment << endl;
+‎                    cout << "Change: PHP " << change << endl;
+‎                    cout << "Thank you for shopping!\n";
+‎                }
+‎                else {
+‎                    cout << "No products purchased.\n";
+‎                }
+‎                break;
+‎
+‎            case 3:
+‎                cout << "\n--- INVENTORY REPORT ---\n";
+‎
+‎                cout << product1 << " | Stock: " << stock1 << endl;
+‎
+‎                if (stock1 == 0)
+‎                    cout << "Status: OUT OF STOCK\n";
+‎                else if (stock1 <= 5)
+‎                    cout << "Status: LOW STOCK\n";
+‎                else
+‎                    c

@@ -1,0 +1,30 @@
+ #include <iostream>
+using namespace std;
+
+int main(){
+  string nproduct;
+    int q;
+    double peso;
+    int choice;
+
+    cout << "1. Add product:" << endl;
+    cout << "2. View items:" << endl;
+    cout << "3. show total:" << endl;
+    cout << "0. exit" << endl;
+    cout << "choose action: " << endl;
+    cin >> choice;
+
+   
+    switch (choice) { 
+        case 1: 
+            cout << "name of the product: ";
+            cin >> nproduct;
+            cout << "Quantity: ";
+            cin >> q;
+            cout << "price of the product: ";
+            cin >> peso;
+            cout << nproduct
+                << " quantity: " << q 
+                << " price:  " << peso << endl;
+            break;
+    }
