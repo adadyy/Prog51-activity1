@@ -1,10 +1,9 @@
- #include <iostream>
+
+#include <iostream>
 using namespace std;
 
 int main(){
-  string nproduct;
-    int q;
-    double peso;
+    
     int choice;
 
     cout << "1. Add product:" << endl;
@@ -17,14 +16,17 @@ int main(){
    
     switch (choice) { 
         case 1: 
+    string nproduct;
+    int q;
+    int peso;
             cout << "name of the product: ";
             cin >> nproduct;
             cout << "Quantity: ";
             cin >> q;
             cout << "price of the product: ";
             cin >> peso;
-            cout << nproduct
-                << " quantity: " << q 
-                << " price:  " << peso << endl;
+            cout << nproduct << " quantity: " << q << " price:  " << peso << endl;
             break;
     }
+    return 0;
+}
