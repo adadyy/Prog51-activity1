@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int choice;
+
+    string nproduct[100];
+    int q[100];
+    int peso[100];
+    int count = 0;
+
+    do {
+        cout << "      " << endl;
+        cout << "      " << endl;
+        cout << "===============" << endl;
+
+        cout << "1. Add product:" << endl;
+        cout << "2. View items:" << endl;
+        cout << "3. show total:" << endl;
+        cout << "0. exit" << endl;
+        cout << "choose action: " << endl;
+        cin >> choice;
+
+        switch (choice) {
+
+            case 1:
+                cout << "name of the product: ";
+                cin >> nproduct[count];
+
+                cout << "Quantity: ";
+                cin >> q[count];
+
+                cout << "price of the product: ";
+                cin >> peso[count];
+
+                cout << nproduct[count] << " quantity: " << q[count]
+                     << " price: " << peso[count] << endl;
+
+                count++;
+                break;
+
+            case 2:
+                for (int i = 0; i < count; i++) {
+                    cout << nproduct[i] << " quantity: " << q[i]
+                         << " price: " << peso[i] << endl;
+                }
+                break;
+
+            case 3:
+                {
+                    int total = 0;
+
+                    for (int i = 0; i < count; i++) {
+                        total = total + (q[i] * peso[i]);
+                    }
+
+                    cout << "Total: " << total << endl;
+                }
+                break;
+
+            case 0:
+                cout << "Exiting program..." << endl;
+                break;
+
+            default:
+                cout << "Invalid choice!" << endl;
+        }
+
+    } while (choice != 0);
+
+    return 0;
+}
